@@ -35,14 +35,14 @@ namespace StudentTableAPI.Controllers
             return student;
         }
 
-        [HttpGet]
+        [HttpPost]
         public void Post([FromQuery] Student student)
         {
             _studentRepository.Add(student);
         }
 
    
-        [HttpGet]
+        [HttpPost]
         public void Put( [FromQuery] Student student)
         {
           _studentRepository.Update(student);
@@ -52,9 +52,9 @@ namespace StudentTableAPI.Controllers
      
 
         [HttpGet("{id}")]
-        public void Delete(int id)
+        public IEnumerable<Student> Delete(int id)
         {
-            _studentRepository.Remove(id);
+           return _studentRepository.Remove(id);
 
         }
         [HttpGet("{id}")]

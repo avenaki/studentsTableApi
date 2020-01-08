@@ -48,11 +48,13 @@ namespace StudentTableAPI.Repository
             return _context.Students.ToList();
         }
 
-        public void Remove(int id)
+        public IEnumerable<Student> Remove(int id)
         {
             var studentToRemove = Get(id);
             _context.Students.Remove(studentToRemove);
             _context.SaveChanges();
+            return _context.Students.ToList();
+
 
         }
 
