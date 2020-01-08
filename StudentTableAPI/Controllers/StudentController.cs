@@ -36,14 +36,14 @@ namespace StudentTableAPI.Controllers
         }
 
         [HttpPost]
-        public void Post([FromQuery] Student student)
+        public void Post(Student student)
         {
             _studentRepository.Add(student);
         }
 
    
         [HttpPost]
-        public void Put( [FromQuery] Student student)
+        public void Put(  Student student)
         {
           _studentRepository.Update(student);
            
