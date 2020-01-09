@@ -51,10 +51,10 @@ namespace StudentTableAPI.Controllers
 
      
 
-        [HttpGet("{id}")]
-        public IEnumerable<Student> Delete(int id)
+        [HttpPost("{id}")]
+        public void Delete(int id)
         {
-           return _studentRepository.Remove(id);
+           _studentRepository.Remove(id);
 
         }
         [HttpGet("{id}")]
